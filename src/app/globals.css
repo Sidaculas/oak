@@ -1,0 +1,1277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 3.9%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 3.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 3.9%;
+
+        --primary: 0 0% 9%;
+        --primary-foreground: 0 0% 98%;
+
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 0 0% 3.9%;
+
+        --radius: 0.5rem;
+
+        --chart-1: 12 76% 61%;
+
+        --chart-2: 173 58% 39%;
+
+        --chart-3: 197 37% 24%;
+
+        --chart-4: 43 74% 66%;
+
+        --chart-5: 27 87% 67%;
+    }
+
+    .dark {
+        --background: 0 0% 3.9%;
+        --foreground: 0 0% 98%;
+
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+        --ring: 0 0% 83.1%;
+        --chart-1: 220 70% 50%;
+        --chart-2: 160 60% 45%;
+        --chart-3: 30 80% 55%;
+        --chart-4: 280 65% 60%;
+        --chart-5: 340 75% 55%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply text-foreground;
+        /* Light mode gradient - same as hero */
+        background: linear-gradient(135deg,
+                hsl(0, 0%, 98%) 0%,
+                hsl(45, 15%, 95%) 25%,
+                hsl(45, 20%, 92%) 50%,
+                hsl(45, 15%, 95%) 75%,
+                hsl(0, 0%, 98%) 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    .dark body {
+        /* Dark mode gradient - same as hero */
+        background: linear-gradient(135deg,
+                hsl(0, 0%, 5%) 0%,
+                hsl(45, 10%, 8%) 25%,
+                hsl(45, 15%, 10%) 50%,
+                hsl(45, 10%, 8%) 75%,
+                hsl(0, 0%, 5%) 100%);
+        background-attachment: fixed;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+
+
+
+
+/* GOLD COLOR */
+:root {
+    --gold: #d4af37;
+    --dark: #0c0c0c;
+    --gray: #1a1a1a;
+}
+
+
+
+/* ================================
+HEADER
+================================= */
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 60px;
+    background: rgba(0, 0, 0, 0.85);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+}
+
+
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+
+
+.header nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+
+
+.header nav a:hover {
+    color: var(--gold);
+}
+
+
+
+.btn-header {
+    background: var(--gold);
+    padding: 10px 16px;
+    border-radius: 5px;
+    color: black !important;
+    font-weight: bold;
+}
+
+
+
+/* ================================
+HERO SECTION
+================================= */
+
+/* Hero Gradient Backgrounds */
+.hero-gradient {
+    position: relative;
+    background: linear-gradient(135deg,
+            hsl(0, 0%, 98%) 0%,
+            hsl(45, 15%, 95%) 25%,
+            hsl(45, 20%, 92%) 50%,
+            hsl(45, 15%, 95%) 75%,
+            hsl(0, 0%, 98%) 100%);
+}
+
+.dark .hero-gradient {
+    background: linear-gradient(135deg,
+            hsl(0, 0%, 5%) 0%,
+            hsl(45, 10%, 8%) 25%,
+            hsl(45, 15%, 10%) 50%,
+            hsl(45, 10%, 8%) 75%,
+            hsl(0, 0%, 5%) 100%);
+}
+
+/* Hero Text Colors - Theme Aware */
+.hero-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .hero-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+.hero-text {
+    color: hsl(0, 0%, 30%);
+}
+
+.dark .hero-text {
+    color: hsl(0, 0%, 75%);
+}
+
+.hero-secondary-btn {
+    color: hsl(0, 0%, 20%);
+}
+
+.dark .hero-secondary-btn {
+    color: hsl(0, 0%, 90%);
+}
+
+/* Animated Background Circles */
+@keyframes float-1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+@keyframes float-2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(-40px, 30px) scale(0.9);
+    }
+
+    66% {
+        transform: translate(20px, -20px) scale(1.1);
+    }
+}
+
+.hero-circle-1 {
+    animation: float-1 20s ease-in-out infinite;
+}
+
+.hero-circle-2 {
+    animation: float-2 25s ease-in-out infinite;
+}
+
+/* Remove old hero styles */
+.hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    margin-top: 40px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 14px 28px;
+    margin: 10px;
+    border-radius: 6px;
+    font-size: 17px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: black;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #f3d066;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid var(--gold);
+}
+
+.btn-secondary:hover {
+    background: var(--gold);
+    color: black;
+}
+
+
+
+/* ================================
+TRUST SECTION (Payment Gateways)
+================================= */
+
+/* Trust Section Background - Theme Aware */
+.trust-section-bg {
+    background: linear-gradient(to bottom,
+            hsl(0, 0%, 98%),
+            hsl(45, 10%, 96%));
+}
+
+.dark .trust-section-bg {
+    background: linear-gradient(to bottom,
+            hsl(0, 0%, 8%),
+            hsl(45, 5%, 10%));
+}
+
+/* Trust Card Background - Theme Aware */
+.trust-card-bg {
+    background: hsla(63, 20%, 59%, 0.303);
+    border-color: hsl(45, 15%, 85%);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1),
+        0 5px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.dark .trust-card-bg {
+    background: hsl(0, 0%, 12%);
+    border-color: hsl(0, 0%, 20%);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4),
+        0 5px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.trust-card-bg:hover {
+    border-color: hsl(45, 70%, 50%);
+    box-shadow: 0 20px 40px -5px rgba(212, 175, 55, 0.15),
+        0 10px 20px -5px rgba(212, 175, 55, 0.1);
+}
+
+.dark .trust-card-bg:hover {
+    border-color: hsl(45, 70%, 50%);
+    box-shadow: 0 20px 40px -5px rgba(212, 175, 55, 0.2),
+        0 10px 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Trust Section Text Colors - Theme Aware */
+.trust-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .trust-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+.trust-subheading {
+    color: hsl(0, 0%, 40%);
+}
+
+.dark .trust-subheading {
+    color: hsl(0, 0%, 70%);
+}
+
+.trust-footer-text {
+    color: hsl(0, 0%, 50%);
+}
+
+.dark .trust-footer-text {
+    color: hsl(0, 0%, 60%);
+}
+
+/* Trust Card Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.trust-card,
+.trust-card-bg {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Old trust styles (keeping for compatibility) */
+.trusted {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.trust-logos img {
+    height: 40px;
+    margin: 20px;
+    opacity: 0.85;
+    transition: 0.3s;
+}
+
+.trust-logos img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+
+/* ================================
+SERVICES
+================================= */
+
+/* Services Heading */
+.services-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .services-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+/* Service Card Background - Theme Aware */
+.service-card {
+    background: linear-gradient(135deg,
+            hsla(45, 30%, 97%, 0.95) 0%,
+            hsla(45, 25%, 95%, 0.9) 50%,
+            hsla(45, 30%, 97%, 0.95) 100%);
+    border-color: hsl(45, 25%, 80%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15),
+        0 5px 20px -5px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dark .service-card {
+    background: linear-gradient(135deg,
+            hsla(0, 0%, 15%, 0.95) 0%,
+            hsla(45, 10%, 12%, 0.9) 50%,
+            hsla(0, 0%, 15%, 0.95) 100%);
+    border-color: hsl(45, 15%, 25%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.2),
+        0 5px 20px -5px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+
+.service-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.25),
+        0 10px 30px -5px rgba(212, 175, 55, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.dark .service-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.3),
+        0 10px 30px -5px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(212, 175, 55, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Service Card Text */
+.service-title {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .service-title {
+    color: hsl(0, 0%, 98%);
+}
+
+.service-description {
+    color: hsl(0, 0%, 40%);
+}
+
+.dark .service-description {
+    color: hsl(0, 0%, 70%);
+}
+
+/* Service Card Animation */
+.service-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Old service styles (keeping for compatibility) */
+.services {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    margin-bottom: 40px;
+    color: var(--gold);
+}
+
+.service-box {
+    background: var(--gray);
+    padding: 30px;
+    margin: 25px auto;
+    max-width: 800px;
+    border-left: 4px solid var(--gold);
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    background: #222;
+}
+
+
+
+/* ================================
+WHY CHOOSE US
+================================= */
+
+/* Why Choose Us Heading */
+.why-choose-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .why-choose-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+/* Why Choose Us Subtitle */
+.why-choose-subtitle {
+    color: hsl(0, 0%, 20%);
+}
+
+.dark .why-choose-subtitle {
+    color: hsl(0, 0%, 90%);
+}
+
+/* Why Choose Us Card */
+.why-choose-card {
+    background: linear-gradient(135deg,
+            hsla(45, 30%, 97%, 0.95) 0%,
+            hsla(45, 25%, 95%, 0.9) 50%,
+            hsla(45, 30%, 97%, 0.95) 100%);
+    border-color: hsl(45, 25%, 80%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15),
+        0 5px 20px -5px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dark .why-choose-card {
+    background: linear-gradient(135deg,
+            hsla(0, 0%, 15%, 0.95) 0%,
+            hsla(45, 10%, 12%, 0.9) 50%,
+            hsla(0, 0%, 15%, 0.95) 100%);
+    border-color: hsl(45, 15%, 25%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.2),
+        0 5px 20px -5px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+
+.why-choose-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.25),
+        0 10px 30px -5px rgba(212, 175, 55, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.dark .why-choose-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.3),
+        0 10px 30px -5px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(212, 175, 55, 0.15);
+}
+
+/* Why Choose Us Text */
+.why-choose-title {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .why-choose-title {
+    color: hsl(0, 0%, 98%);
+}
+
+.why-choose-description {
+    color: hsl(0, 0%, 40%);
+}
+
+.dark .why-choose-description {
+    color: hsl(0, 0%, 70%);
+}
+
+/* Why Choose Us Card Animation */
+.why-choose-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+
+/* ================================
+NAME CHECKER
+================================= */
+
+
+
+/* ================================
+HOW IT WORKS
+================================= */
+
+/* How It Works Heading */
+.how-it-works-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .how-it-works-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+/* How It Works Icon */
+.how-it-works-icon {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* How It Works Text */
+.how-it-works-title {
+    color: hsl(45, 70%, 50%);
+}
+
+.how-it-works-description {
+    color: hsl(0, 0%, 30%);
+}
+
+.dark .how-it-works-description {
+    color: hsl(0, 0%, 75%);
+}
+
+.how-it-works-footer {
+    color: hsl(0, 0%, 20%);
+}
+
+.dark .how-it-works-footer {
+    color: hsl(0, 0%, 85%);
+}
+
+
+/* ================================
+NAME CHECKER
+================================= */
+
+
+
+.checker {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+
+
+.checker-box {
+    margin-top: 30px;
+}
+
+
+
+#companyName {
+    width: 70%;
+    max-width: 450px;
+    padding: 14px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+
+
+.checker button {
+    padding: 14px 25px;
+    background: var(--gold);
+    color: black;
+    border: none;
+    border-radius: 6px;
+    margin-left: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+.checker button:hover {
+    background: #f2d37a;
+}
+
+
+
+#checkerResult {
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+
+
+/* ================================
+PRICING
+================================= */
+
+/* Pricing Heading */
+.pricing-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .pricing-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+/* Pricing Card Background - Theme Aware */
+.pricing-card {
+    background: linear-gradient(135deg,
+            hsla(45, 35%, 98%, 0.98) 0%,
+            hsla(45, 30%, 96%, 0.95) 50%,
+            hsla(45, 35%, 98%, 0.98) 100%);
+    border-color: hsl(45, 30%, 78%);
+    box-shadow: 0 15px 50px -15px rgba(212, 175, 55, 0.2),
+        0 8px 25px -8px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(212, 175, 55, 0.1);
+}
+
+.dark .pricing-card {
+    background: linear-gradient(135deg,
+            hsla(0, 0%, 16%, 0.98) 0%,
+            hsla(45, 12%, 13%, 0.95) 50%,
+            hsla(0, 0%, 16%, 0.98) 100%);
+    border-color: hsl(45, 20%, 28%);
+    box-shadow: 0 15px 50px -15px rgba(212, 175, 55, 0.25),
+        0 8px 25px -8px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(212, 175, 55, 0.12),
+        inset 0 -1px 0 rgba(212, 175, 55, 0.08);
+}
+
+.pricing-card:hover {
+    border-color: hsl(45, 70%, 58%);
+    box-shadow: 0 25px 60px -15px rgba(212, 175, 55, 0.3),
+        0 12px 35px -8px rgba(212, 175, 55, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        inset 0 -1px 0 rgba(212, 175, 55, 0.15);
+    transform: translateY(-3px);
+}
+
+.dark .pricing-card:hover {
+    border-color: hsl(45, 70%, 58%);
+    box-shadow: 0 25px 60px -15px rgba(212, 175, 55, 0.35),
+        0 12px 35px -8px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 rgba(212, 175, 55, 0.18),
+        inset 0 -1px 0 rgba(212, 175, 55, 0.12);
+    transform: translateY(-3px);
+}
+
+/* Pricing Card Text */
+.pricing-tier-name {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .pricing-tier-name {
+    color: hsl(0, 0%, 98%);
+}
+
+.pricing-description {
+    color: hsl(0, 0%, 40%);
+}
+
+.dark .pricing-description {
+    color: hsl(0, 0%, 70%);
+}
+
+.pricing-feature {
+    color: hsl(0, 0%, 30%);
+}
+
+.dark .pricing-feature {
+    color: hsl(0, 0%, 75%);
+}
+
+/* Pricing Card Animation */
+.pricing-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Old pricing styles (keeping for compatibility) */
+.pricing {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+
+
+.price-card {
+    background: var(--gray);
+    padding: 30px;
+    margin: 25px auto;
+    max-width: 350px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+
+
+.price-card:hover {
+    transform: scale(1.05);
+    background: #222;
+}
+
+
+
+.highlight {
+    border: 2px solid var(--gold);
+}
+
+
+
+/* ================================
+TESTIMONIALS
+================================= */
+
+/* Testimonials Heading */
+.testimonials-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .testimonials-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+/* Testimonial Card Background - Theme Aware */
+.testimonial-card {
+    background: linear-gradient(135deg,
+            hsla(45, 30%, 97%, 0.95) 0%,
+            hsla(45, 25%, 95%, 0.9) 50%,
+            hsla(45, 30%, 97%, 0.95) 100%);
+    border-color: hsl(45, 25%, 80%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15),
+        0 5px 20px -5px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dark .testimonial-card {
+    background: linear-gradient(135deg,
+            hsla(0, 0%, 15%, 0.95) 0%,
+            hsla(45, 10%, 12%, 0.9) 50%,
+            hsla(0, 0%, 15%, 0.95) 100%);
+    border-color: hsl(45, 15%, 25%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.2),
+        0 5px 20px -5px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+
+.testimonial-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.25),
+        0 10px 30px -5px rgba(212, 175, 55, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.dark .testimonial-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.3),
+        0 10px 30px -5px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(212, 175, 55, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Testimonial Text */
+.testimonial-quote {
+    color: hsl(0, 0%, 20%);
+}
+
+.dark .testimonial-quote {
+    color: hsl(0, 0%, 85%);
+}
+
+.testimonial-location {
+    color: hsl(0, 0%, 40%);
+}
+
+.dark .testimonial-location {
+    color: hsl(0, 0%, 70%);
+}
+
+/* Testimonial Card Animation */
+.testimonial-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+
+/* ================================
+CONTACT
+================================= */
+
+
+
+/* ================================
+FAQ
+================================= */
+
+/* FAQ Heading */
+.faq-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .faq-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+/* FAQ Section Title */
+.faq-section-title {
+    color: hsl(45, 70%, 50%);
+}
+
+/* FAQ Item */
+.faq-item {
+    background: linear-gradient(135deg,
+            hsla(45, 30%, 97%, 0.95) 0%,
+            hsla(45, 25%, 95%, 0.9) 100%);
+    border-color: hsl(45, 25%, 80%);
+}
+
+.dark .faq-item {
+    background: linear-gradient(135deg,
+            hsla(0, 0%, 15%, 0.95) 0%,
+            hsla(45, 10%, 12%, 0.9) 100%);
+    border-color: hsl(45, 15%, 25%);
+}
+
+/* FAQ Question */
+.faq-question {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .faq-question {
+    color: hsl(0, 0%, 95%);
+}
+
+/* FAQ Answer */
+.faq-answer {
+    color: hsl(0, 0%, 30%);
+}
+
+.dark .faq-answer {
+    color: hsl(0, 0%, 75%);
+}
+
+
+/* ================================
+CONTACT
+================================= */
+
+
+
+.contact {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+
+
+.contact p {
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+
+
+/* ================================
+FOOTER
+================================= */
+
+
+
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: #000;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+
+
+/* ================================
+RESPONSIVE DESIGN
+================================= */
+
+/* Tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 20px 40px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .service-box {
+        max-width: 90%;
+    }
+
+    .price-card {
+        max-width: 90%;
+    }
+}
+
+/* Tablets and Small Screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header nav a {
+        margin: 5px 10px;
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+        background-attachment: scroll;
+        /* Better performance on mobile */
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 15px;
+        max-width: 90%;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        max-width: 280px;
+        margin: 5px 0;
+    }
+
+    .trust-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .trust-logos img {
+        height: 30px;
+        margin: 10px;
+    }
+
+    .services,
+    .checker,
+    .pricing,
+    .contact {
+        padding: 60px 15px;
+    }
+
+    .service-box,
+    .price-card {
+        padding: 25px;
+        margin: 20px auto;
+    }
+
+    .checker-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    #companyName {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .checker button {
+        margin-left: 0;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    #checkerResult {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+}
+
+/* Mobile Phones (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .header {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .header nav a {
+        font-size: 13px;
+        margin: 5px 8px;
+    }
+
+    .btn-header {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 20px;
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .services h2,
+    .checker h2,
+    .pricing h2,
+    .contact h2 {
+        font-size: 24px;
+    }
+
+    .service-box,
+    .price-card {
+        padding: 20px;
+        margin: 15px auto;
+    }
+
+    .service-box h3,
+    .price-card h3 {
+        font-size: 18px;
+    }
+
+    .service-box p,
+    .price-card p {
+        font-size: 14px;
+    }
+
+    #companyName {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .checker button {
+        padding: 12px 20px;
+        font-size: 15px;
+    }
+
+    #checkerResult {
+        font-size: 14px;
+    }
+
+    .contact p {
+        font-size: 15px;
+    }
+
+    .footer {
+        font-size: 12px;
+        padding: 20px 15px;
+    }
+}
+
+/* Large Screens (1440px and above) */
+@media screen and (min-width: 1440px) {
+    .header {
+        padding: 25px 120px;
+    }
+
+    .hero {
+        padding: 150px 40px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        max-width: 1100px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        max-width: 900px;
+    }
+
+    .services,
+    .checker,
+    .pricing,
+    .contact {
+        padding: 100px 40px;
+    }
+
+    .service-box {
+        max-width: 1000px;
+        padding: 40px;
+    }
+
+    .price-card {
+        max-width: 400px;
+        padding: 40px;
+    }
+}
