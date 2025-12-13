@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import CountrySelector, { Country } from "./CountrySelector";
 import { FaShieldAlt, FaClock, FaDollarSign, FaHeadset, FaUserTie, FaCheckCircle } from "react-icons/fa";
+import { useCountry } from "@/contexts/CountryContext";
 
 interface Reason {
     icon: React.ReactNode;
@@ -92,7 +92,7 @@ const whyChooseData: Record<Country, { subtitle: string; icon: React.ReactNode; 
 };
 
 export default function WhyChooseUs() {
-    const [selectedCountry, setSelectedCountry] = useState<Country>("UK");
+    const { selectedCountry, setSelectedCountry } = useCountry();
     const data = whyChooseData[selectedCountry];
 
     return (

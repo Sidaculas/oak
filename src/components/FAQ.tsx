@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import { useCountry } from "@/contexts/CountryContext";
+import type { Country } from "@/contexts/CountryContext";
 
 interface FAQItem {
     question: string;
@@ -127,12 +129,21 @@ const faqData: FAQSection[] = [
     },
 ];
 
+// Map country to index for accessing faqData array
+const countryToIndex: Record<Country, number> = {
+    UK: 0,
+    USA: 1,
+    Canada: 2,
+};
+
 export default function FAQ() {
-    const [activeTab, setActiveTab] = useState(0);
+    const { selectedCountry, setSelectedCountry } = useCountry();
     const [openItems, setOpenItems] = useState<Set<string>>(new Set());
 
+    const activeIndex = countryToIndex[selectedCountry];
+
     const toggleItem = (itemIndex: number) => {
-        const key = `${activeTab}-${itemIndex}`;
+        const key = `${selectedCountry}-${itemIndex}`;
         const newOpenItems = new Set(openItems);
         if (newOpenItems.has(key)) {
             newOpenItems.delete(key);
@@ -165,12 +176,12 @@ export default function FAQ() {
                         <button
                             key={index}
                             onClick={() => {
-                                setActiveTab(index);
+                                setSelectedCountry(section.title as Country);
                                 setOpenItems(new Set()); // Clear open items when switching tabs
                             }}
-                            className={`flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold transition-all sm:px-6 sm:text-base ${activeTab === index
-                                    ? "bg-gradient-to-r from-[#d4af37] to-[#f3d066] text-black shadow-lg shadow-[#d4af37]/30"
-                                    : "border border-border/40 bg-background/50 text-foreground/70 hover:border-[#d4af37]/50 hover:text-foreground"
+                            className={`flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold transition-all sm:px-6 sm:text-base ${activeIndex === index
+                                ? "bg-gradient-to-r from-[#d4af37] to-[#f3d066] text-black shadow-lg shadow-[#d4af37]/30"
+                                : "border border-border/40 bg-background/50 text-foreground/70 hover:border-[#d4af37]/50 hover:text-foreground"
                                 }`}
                         >
                             <span className="text-xl sm:text-2xl">{section.flag}</span>
@@ -181,8 +192,8 @@ export default function FAQ() {
 
                 {/* FAQ Items */}
                 <div className="space-y-3">
-                    {faqData[activeTab].items.map((item, itemIndex) => {
-                        const key = `${activeTab}-${itemIndex}`;
+                    {faqData[activeIndex].items.map((item, itemIndex) => {
+                        const key = `${selectedCountry}-${itemIndex}`;
                         const isOpen = openItems.has(key);
 
                         return (

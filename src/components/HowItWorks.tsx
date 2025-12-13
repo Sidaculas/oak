@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import CountrySelector, { Country } from "./CountrySelector";
 import { FaEdit, FaShieldAlt, FaRocket } from "react-icons/fa";
+import { useCountry } from "@/contexts/CountryContext";
 
 interface Step {
     icon: React.ReactNode;
@@ -74,7 +74,7 @@ const howItWorksData: Record<Country, { steps: Step[]; footer: string }> = {
 };
 
 export default function HowItWorks() {
-    const [selectedCountry, setSelectedCountry] = useState<Country>("UK");
+    const { selectedCountry, setSelectedCountry } = useCountry();
     const data = howItWorksData[selectedCountry];
 
     return (

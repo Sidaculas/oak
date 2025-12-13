@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import CountrySelector, { Country } from "./CountrySelector";
 import { FaCheck } from "react-icons/fa";
+import { useCountry } from "@/contexts/CountryContext";
 
 interface PricingTier {
     name: string;
@@ -141,7 +141,7 @@ const pricingData: Record<Country, PricingTier[]> = {
 };
 
 export default function Pricing() {
-    const [selectedCountry, setSelectedCountry] = useState<Country>("UK");
+    const { selectedCountry, setSelectedCountry } = useCountry();
     const tiers = pricingData[selectedCountry];
 
     return (

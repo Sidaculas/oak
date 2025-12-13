@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import CountrySelector, { Country } from "./CountrySelector";
 import { FaBuilding, FaMapMarkerAlt, FaUniversity, FaFileInvoiceDollar } from "react-icons/fa";
+import { useCountry } from "@/contexts/CountryContext";
 
 interface Service {
     icon: React.ReactNode;
@@ -80,7 +80,7 @@ const servicesData: Record<Country, Service[]> = {
 };
 
 export default function Services() {
-    const [selectedCountry, setSelectedCountry] = useState<Country>("UK");
+    const { selectedCountry, setSelectedCountry } = useCountry();
     const services = servicesData[selectedCountry];
 
     return (

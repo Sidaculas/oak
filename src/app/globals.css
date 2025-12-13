@@ -1104,25 +1104,70 @@ CONTACT SECTION
 .contact {
     padding: 0;
     text-align: center;
+    position: relative;
 }
 
 /* Part 1: Contact Information Section */
 .contact-info-section {
     padding: 80px 20px;
-    background: linear-gradient(to bottom,
-            hsl(0, 0%, 98%),
-            hsl(45, 10%, 96%));
+    position: relative;
+    overflow: hidden;
 }
 
-.dark .contact-info-section {
-    background: linear-gradient(to bottom,
-            hsl(0, 0%, 8%),
-            hsl(45, 5%, 10%));
+/* Background decoration - matching FAQ */
+.contact-info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.contact-info-section::after {
+    content: '';
+    position: absolute;
+    left: 33%;
+    top: 0;
+    width: 384px;
+    height: 384px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.05);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dark .contact-info-section::after {
+    background: rgba(212, 175, 55, 0.05);
+}
+
+/* Second decorative circle at bottom right */
+.contact::before {
+    content: '';
+    position: absolute;
+    right: 33%;
+    bottom: 0;
+    width: 384px;
+    height: 384px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.05);
+    filter: blur(80px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dark .contact::before {
+    background: rgba(212, 175, 55, 0.05);
 }
 
 .contact-header {
     max-width: 800px;
     margin: 0 auto 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-header .section-title {
@@ -1154,6 +1199,8 @@ CONTACT SECTION
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Individual Contact Card */
@@ -1436,8 +1483,19 @@ FOOTER
     line-height: 1.6;
 }
 
+.footer-company-address {
+    margin: 0;
+    font-size: 14px;
+    color: hsl(0, 0%, 40%);
+    line-height: 1.6;
+}
+
 .dark .footer-copyright,
 .dark .footer-company-number {
+    color: hsl(0, 0%, 70%);
+}
+
+.dark .footer-company-address {
     color: hsl(0, 0%, 70%);
 }
 

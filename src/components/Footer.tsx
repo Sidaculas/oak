@@ -1,6 +1,10 @@
 'use client';
 
+import { FaWhatsapp } from "react-icons/fa";
+
 export default function Footer() {
+    const currentYear = new Date().getFullYear();
+
     const handleWhatsAppClick = () => {
         window.open('https://wa.me/447447488755', '_blank');
     };
@@ -10,8 +14,10 @@ export default function Footer() {
             <div className="footer-content">
                 {/* Company Information */}
                 <div className="footer-section footer-company">
-                    <p className="footer-copyright">© 2025 Seven Oak Prestige Ltd</p>
+                    <p className="footer-copyright">© {currentYear} Seven Oak Prestige Ltd</p>
                     <p className="footer-company-number">Company No. 16903092</p>
+                    <p className="footer-company-address">124 City Road, London
+                        EC1V 2NX, United Kingdom</p>
                 </div>
 
                 {/* Vertical Separator */}

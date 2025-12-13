@@ -14,10 +14,11 @@ import SuccessStories from '../components/SuccessStories';
 import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import { CountryProvider } from '@/contexts/CountryContext';
 
 export default function Home() {
     return (
-        <>
+        <CountryProvider>
             <Navbar />
             <Hero />
             <TrustSection />
@@ -31,6 +32,6 @@ export default function Home() {
             <FAQ />
             <Contact />
             <Footer />
-        </>
+        </CountryProvider>
     );
 }

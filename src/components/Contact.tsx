@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
@@ -43,20 +43,6 @@ export default function Contact() {
                         </a>
                         <p className="contact-description">
                             Chat with us instantly for quick answers
-                        </p>
-                    </div>
-
-                    <div className="contact-card">
-                        <div className="contact-icon">
-                            <MapPin size={28} />
-                        </div>
-                        <h3>Visit Us</h3>
-                        <p className="contact-link">
-                            124 City Road, London<br />
-                            EC1V 2NX, United Kingdom
-                        </p>
-                        <p className="contact-description">
-                            Our office is open Monday to Friday, 9 AM - 6 PM
                         </p>
                     </div>
                 </div>
