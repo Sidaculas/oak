@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FaCheckCircle, FaTimesCircle, FaExclamationTriangle, FaSpinner } from 'react-icons/fa';
+import { FaCheckCircle, FaTimesCircle, FaExclamationTriangle, FaSpinner, FaTimes } from 'react-icons/fa';
 
 interface CompanyResult {
     title: string;
@@ -106,6 +106,10 @@ export default function CompanyChecker() {
         }
     };
 
+    const handleClearResult = () => {
+        setResult({ type: null, message: '' });
+    };
+
     return (
         <section id="checker" className="checker-section">
             <div className="checker-container">
@@ -118,7 +122,12 @@ export default function CompanyChecker() {
                         className="checker-input"
                         placeholder="Enter company name"
                         value={companyName}
-                        onChange={(e) => setCompanyName(e.target.value)}
+                        onChange={(e) => {
+                            setCompanyName(e.target.value);
+                            if (e.target.value.trim() === '') {
+                                handleClearResult();
+                            }
+                        }}
                         onKeyPress={(e) => e.key === 'Enter' && !isLoading && handleCheckAvailability()}
                         disabled={isLoading}
                     />
@@ -142,10 +151,19 @@ export default function CompanyChecker() {
                 {result.type && (
                     <div className={`checker-result checker-result-${result.type}`}>
                         <div className="checker-result-header">
-                            {result.type === 'success' && <FaCheckCircle className="checker-result-icon" />}
-                            {result.type === 'error' && <FaTimesCircle className="checker-result-icon" />}
-                            {result.type === 'warning' && <FaExclamationTriangle className="checker-result-icon" />}
-                            <h3 className="checker-result-title">{result.message}</h3>
+                            <div className="checker-result-header-content">
+                                {result.type === 'success' && <FaCheckCircle className="checker-result-icon" />}
+                                {result.type === 'error' && <FaTimesCircle className="checker-result-icon" />}
+                                {result.type === 'warning' && <FaExclamationTriangle className="checker-result-icon" />}
+                                <h3 className="checker-result-title">{result.message}</h3>
+                            </div>
+                            <button
+                                onClick={handleClearResult}
+                                className="checker-result-close"
+                                aria-label="Close result"
+                            >
+                                <FaTimes />
+                            </button>
                         </div>
 
                         {result.companies && result.companies.length > 0 && (

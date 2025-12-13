@@ -1,7 +1,6 @@
 'use client';
 
 import './globals.css';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import TrustSection from '../components/TrustSection';
 import Services from '../components/Services';
@@ -19,7 +18,6 @@ import { CountryProvider } from '@/contexts/CountryContext';
 export default function Home() {
     return (
         <CountryProvider>
-            <Navbar />
             <Hero />
             <TrustSection />
             <Services />

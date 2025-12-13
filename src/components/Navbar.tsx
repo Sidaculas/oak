@@ -16,10 +16,11 @@ import { ModeToggle } from "./mode-toggle";
 import { useTheme } from "next-themes";
 
 const links = [
-    { href: "#services", label: "Services" },
-    { href: "#checker", label: "Company Checker" },
-    { href: "#pricing", label: "Pricing" },
-    { href: "#contact", label: "Contact" },
+    { name: "Services", href: "#services" },
+    { name: "Company Checker", href: "#checker" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "Blogs", href: "/blog" },
+    { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -93,7 +94,7 @@ export default function Navbar() {
                                         href={link.href}
                                         className="group relative block px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
                                     >
-                                        <span className="relative z-10">{link.label}</span>
+                                        <span className="relative z-10">{link.name}</span>
                                         <span className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-[#d4af37] to-[#f3d066] transition-transform group-hover:scale-x-100" />
                                     </Link>
                                 </li>
@@ -145,7 +146,7 @@ export default function Navbar() {
                                             className="group relative overflow-hidden rounded-lg px-4 py-3 text-base font-medium text-foreground/80 transition-colors hover:bg-foreground/5 hover:text-foreground"
                                             onClick={() => setIsOpen(false)}
                                         >
-                                            <span className="relative z-10">{link.label}</span>
+                                            <span className="relative z-10">{link.name}</span>
                                             <span className="absolute inset-y-0 left-0 w-1 origin-left scale-y-0 bg-gradient-to-b from-[#d4af37] to-[#f3d066] transition-transform group-hover:scale-y-100" />
                                         </Link>
                                     ))}
