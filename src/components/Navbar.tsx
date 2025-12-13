@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./mode-toggle";
+import { useTheme } from "next-themes";
 
 const links = [
     { href: "#services", label: "Services" },
@@ -22,9 +23,15 @@ const links = [
 ];
 
 export default function Navbar() {
+    const { theme, resolvedTheme } = useTheme();
     const [isOpen, setIsOpen] = React.useState(false);
     const [isVisible, setIsVisible] = React.useState(true);
     const [lastScrollY, setLastScrollY] = React.useState(0);
+    const [mounted, setMounted] = React.useState(false);
+
+    React.useEffect(() => {
+        setMounted(true);
+    }, []);
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -59,7 +66,11 @@ export default function Navbar() {
                     >
                         <div className="flex items-center">
                             <Image
-                                src="/assets/logo/seven_oak_prestige_logo.png"
+                                src={
+                                    mounted && (resolvedTheme === "dark" || theme === "dark")
+                                        ? "/assets/logo/seven_oak_prestige_dark_mode.png"
+                                        : "/assets/logo/seven_oak_prestige_light_mode.png"
+                                }
                                 alt="Seven Oak Prestige Logo"
                                 width={70}
                                 height={70}
