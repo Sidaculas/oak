@@ -436,6 +436,17 @@ TRUST SECTION (Payment Gateways)
     transform: scale(1.1);
 }
 
+/* Payment Gateway Logos - Theme Aware */
+.payment-logo {
+    filter: brightness(0) invert(1) grayscale(10%);
+    transition: filter 0.3s ease;
+}
+
+.dark .payment-logo {
+    filter: brightness(1) invert(0) grayscale(100%);
+}
+
+
 
 
 /* ================================
@@ -925,6 +936,104 @@ TESTIMONIALS
 
 
 /* ================================
+SUCCESS STORIES
+================================= */
+
+/* Success Stories Heading */
+.success-stories-heading {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .success-stories-heading {
+    color: hsl(0, 0%, 98%);
+}
+
+/* Success Story Card Background - Theme Aware */
+.success-story-card {
+    background: linear-gradient(135deg,
+            hsla(45, 30%, 97%, 0.95) 0%,
+            hsla(45, 25%, 95%, 0.9) 50%,
+            hsla(45, 30%, 97%, 0.95) 100%);
+    border-color: hsl(45, 25%, 80%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15),
+        0 5px 20px -5px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.dark .success-story-card {
+    background: linear-gradient(135deg,
+            hsla(0, 0%, 15%, 0.95) 0%,
+            hsla(45, 10%, 12%, 0.9) 50%,
+            hsla(0, 0%, 15%, 0.95) 100%);
+    border-color: hsl(45, 15%, 25%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.2),
+        0 5px 20px -5px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(212, 175, 55, 0.1);
+}
+
+.success-story-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.25),
+        0 10px 30px -5px rgba(212, 175, 55, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.dark .success-story-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.3),
+        0 10px 30px -5px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(212, 175, 55, 0.15);
+}
+
+/* Success Story Text */
+.success-story-title {
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .success-story-title {
+    color: hsl(0, 0%, 98%);
+}
+
+.success-story-subtitle {
+    color: hsl(45, 70%, 50%);
+}
+
+.success-story-description {
+    color: hsl(0, 0%, 30%);
+}
+
+.dark .success-story-description {
+    color: hsl(0, 0%, 75%);
+}
+
+/* Success Story Badge */
+.success-story-badge {
+    color: hsl(45, 70%, 50%);
+    background: hsla(45, 70%, 50%, 0.1);
+}
+
+.dark .success-story-badge {
+    color: hsl(45, 70%, 60%);
+    background: hsla(45, 70%, 50%, 0.15);
+}
+
+/* Success Story Logo */
+.success-story-logo {
+    color: hsl(0, 0%, 20%);
+}
+
+.dark .success-story-logo {
+    color: hsl(0, 0%, 90%);
+}
+
+/* Success Story Card Animation */
+.success-story-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+
+/* ================================
 CONTACT
 ================================= */
 
@@ -988,16 +1097,291 @@ CONTACT
 
 
 
+/* ================================
+CONTACT SECTION
+================================= */
+
 .contact {
-    padding: 80px 20px;
+    padding: 0;
     text-align: center;
 }
 
+/* Part 1: Contact Information Section */
+.contact-info-section {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom,
+            hsl(0, 0%, 98%),
+            hsl(45, 10%, 96%));
+}
 
+.dark .contact-info-section {
+    background: linear-gradient(to bottom,
+            hsl(0, 0%, 8%),
+            hsl(45, 5%, 10%));
+}
 
-.contact p {
-    margin: 10px 0;
-    font-size: 17px;
+.contact-header {
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.contact-header .section-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .contact-header .section-title {
+    color: hsl(0, 0%, 98%);
+}
+
+.contact-header .section-subtitle {
+    font-size: 18px;
+    color: hsl(0, 0%, 40%);
+    line-height: 1.6;
+}
+
+.dark .contact-header .section-subtitle {
+    color: hsl(0, 0%, 70%);
+}
+
+/* Contact Cards Grid */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Individual Contact Card */
+.contact-card {
+    background: linear-gradient(135deg,
+            hsla(45, 30%, 97%, 0.95) 0%,
+            hsla(45, 25%, 95%, 0.9) 50%,
+            hsla(45, 30%, 97%, 0.95) 100%);
+    border: 2px solid hsl(45, 25%, 80%);
+    border-radius: 16px;
+    padding: 40px 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.15),
+        0 5px 20px -5px rgba(0, 0, 0, 0.08);
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.dark .contact-card {
+    background: linear-gradient(135deg,
+            hsla(0, 0%, 15%, 0.95) 0%,
+            hsla(45, 10%, 12%, 0.9) 50%,
+            hsla(0, 0%, 15%, 0.95) 100%);
+    border-color: hsl(45, 15%, 25%);
+    box-shadow: 0 10px 40px -10px rgba(212, 175, 55, 0.2),
+        0 5px 20px -5px rgba(0, 0, 0, 0.6);
+}
+
+.contact-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.contact-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.contact-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.25),
+        0 10px 30px -5px rgba(212, 175, 55, 0.15);
+}
+
+.dark .contact-card:hover {
+    border-color: hsl(45, 70%, 55%);
+    box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.3),
+        0 10px 30px -5px rgba(0, 0, 0, 0.7);
+}
+
+/* Contact Icon */
+.contact-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, hsl(45, 70%, 50%), hsl(45, 80%, 60%));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(0, 0%, 10%);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px -5px rgba(212, 175, 55, 0.4);
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 30px -5px rgba(212, 175, 55, 0.6);
+}
+
+/* Contact Card Title */
+.contact-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: hsl(0, 0%, 10%);
+}
+
+.dark .contact-card h3 {
+    color: hsl(0, 0%, 98%);
+}
+
+/* Contact Link */
+.contact-link {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: hsl(45, 70%, 45%);
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: color 0.3s ease;
+    line-height: 1.5;
+}
+
+.contact-link:hover {
+    color: hsl(45, 80%, 55%);
+}
+
+.dark .contact-link {
+    color: hsl(45, 70%, 60%);
+}
+
+.dark .contact-link:hover {
+    color: hsl(45, 80%, 70%);
+}
+
+/* Contact Description */
+.contact-description {
+    font-size: 14px;
+    color: hsl(0, 0%, 50%);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.dark .contact-description {
+    color: hsl(0, 0%, 65%);
+}
+
+/* Part 2: CTA Section */
+.contact-cta-section {
+    background: linear-gradient(135deg,
+            hsl(45, 20%, 92%) 0%,
+            hsl(45, 15%, 88%) 50%,
+            hsl(45, 20%, 92%) 100%);
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark .contact-cta-section {
+    background: linear-gradient(135deg,
+            hsl(0, 0%, 5%) 0%,
+            hsl(0, 0%, 8%) 50%,
+            hsl(0, 0%, 5%) 100%);
+}
+
+/* CTA Background Pattern */
+.contact-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 56px;
+    font-weight: 700;
+    color: hsl(0, 0%, 10%);
+    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.dark .cta-title {
+    color: hsl(0, 0%, 98%);
+}
+
+.cta-subtitle {
+    font-size: 20px;
+    color: hsl(45, 70%, 45%);
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.dark .cta-subtitle {
+    color: hsl(45, 70%, 60%);
+}
+
+.cta-whatsapp-btn {
+    background: linear-gradient(135deg, hsl(45, 70%, 50%), hsl(45, 80%, 60%));
+    color: hsl(0, 0%, 10%);
+    font-size: 18px;
+    font-weight: 700;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-whatsapp-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-whatsapp-btn:hover::before {
+    left: 100%;
+}
+
+.cta-whatsapp-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px -5px rgba(212, 175, 55, 0.7);
+    background: linear-gradient(135deg, hsl(45, 80%, 55%), hsl(45, 90%, 65%));
+}
+
+.cta-whatsapp-btn:active {
+    transform: translateY(-1px) scale(1.02);
 }
 
 
@@ -1006,14 +1390,166 @@ CONTACT
 FOOTER
 ================================= */
 
-
-
 .footer {
-    text-align: center;
-    padding: 25px;
-    background: #000;
-    margin-top: 50px;
+    background: linear-gradient(to bottom,
+            hsl(0, 0%, 98%),
+            hsl(45, 10%, 96%));
+    padding: 40px 20px;
+    border-top: 2px solid hsl(45, 25%, 80%);
+}
+
+.dark .footer {
+    background: linear-gradient(to bottom,
+            hsl(0, 0%, 8%),
+            hsl(45, 5%, 10%));
+    border-top-color: hsl(45, 15%, 25%);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Footer Sections */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Company Information */
+.footer-company {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-copyright,
+.footer-company-number {
+    margin: 0;
     font-size: 14px;
+    color: hsl(0, 0%, 40%);
+    line-height: 1.6;
+}
+
+.dark .footer-copyright,
+.dark .footer-company-number {
+    color: hsl(0, 0%, 70%);
+}
+
+.footer-copyright {
+    font-weight: 600;
+}
+
+/* Vertical Separator */
+.footer-separator {
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom,
+            transparent,
+            hsl(45, 25%, 70%),
+            transparent);
+}
+
+.dark .footer-separator {
+    background: linear-gradient(to bottom,
+            transparent,
+            hsl(45, 15%, 30%),
+            transparent);
+}
+
+/* Page Links */
+.footer-links {
+    flex-direction: row;
+    gap: 24px;
+    flex: 1;
+    justify-content: center;
+}
+
+.footer-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.footer-link:hover {
+    color: hsl(45, 70%, 45%);
+}
+
+.dark .footer-link {
+    color: hsl(0, 0%, 75%);
+}
+
+.dark .footer-link:hover {
+    color: hsl(45, 70%, 60%);
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: hsl(45, 70%, 50%);
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+/* CTA Section */
+.footer-cta {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 250px;
+}
+
+.footer-cta-text {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: hsl(0, 0%, 30%);
+    white-space: nowrap;
+}
+
+.dark .footer-cta-text {
+    color: hsl(0, 0%, 75%);
+}
+
+.footer-whatsapp-btn {
+    background: linear-gradient(135deg, hsl(45, 70%, 50%), hsl(45, 80%, 60%));
+    color: hsl(0, 0%, 10%);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px -2px rgba(212, 175, 55, 0.3);
+}
+
+.footer-whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px -2px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, hsl(45, 80%, 55%), hsl(45, 90%, 65%));
+}
+
+.footer-whatsapp-btn:active {
+    transform: translateY(0);
 }
 
 
@@ -1194,8 +1730,26 @@ RESPONSIVE DESIGN
     .services h2,
     .checker h2,
     .pricing h2,
-    .contact h2 {
-        font-size: 24px;
+    .contact-header .section-title {
+        font-size: 32px;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cta-title {
+        font-size: 36px;
+    }
+
+    .cta-subtitle {
+        font-size: 16px;
+    }
+
+    .cta-whatsapp-btn {
+        font-size: 16px;
+        padding: 16px 40px;
     }
 
     .service-box,
@@ -1228,13 +1782,54 @@ RESPONSIVE DESIGN
         font-size: 14px;
     }
 
-    .contact p {
-        font-size: 15px;
+    .contact-header .section-subtitle {
+        font-size: 16px;
+    }
+
+    .contact-card {
+        padding: 30px 20px;
+    }
+
+    .cta-title {
+        font-size: 28px;
+    }
+
+    .cta-subtitle {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+
+    .cta-whatsapp-btn {
+        font-size: 14px;
+        padding: 14px 30px;
     }
 
     .footer {
-        font-size: 12px;
-        padding: 20px 15px;
+        padding: 30px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    .footer-cta {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .footer-whatsapp-btn {
+        flex: 1;
     }
 }
 
@@ -1260,9 +1855,20 @@ RESPONSIVE DESIGN
 
     .services,
     .checker,
-    .pricing,
-    .contact {
+    .pricing {
         padding: 100px 40px;
+    }
+
+    .contact-info-section {
+        padding: 100px 40px;
+    }
+
+    .contact-cta-section {
+        padding: 120px 40px;
+    }
+
+    .cta-title {
+        font-size: 64px;
     }
 
     .service-box {

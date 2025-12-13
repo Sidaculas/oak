@@ -10,6 +10,7 @@ import HowItWorks from '../components/HowItWorks';
 import CompanyChecker from '../components/CompanyChecker';
 import Pricing from '../components/Pricing';
 import Testimonials from '../components/Testimonials';
+import SuccessStories from '../components/SuccessStories';
 import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -26,6 +27,7 @@ export default function Home() {
             <CompanyChecker />
             <Pricing />
             <Testimonials />
+            <SuccessStories />
             <FAQ />
             <Contact />
             <Footer />

@@ -5,7 +5,6 @@ import Image from "next/image";
 import * as React from "react";
 import { TbMenu3 } from "react-icons/tb";
 import { FaWhatsapp } from "react-icons/fa";
-import { useTheme } from "next-themes";
 import {
     Sheet,
     SheetContent,
@@ -24,14 +23,8 @@ const links = [
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = React.useState(false);
-    const [mounted, setMounted] = React.useState(false);
     const [isVisible, setIsVisible] = React.useState(true);
     const [lastScrollY, setLastScrollY] = React.useState(0);
-    const { theme } = useTheme();
-
-    React.useEffect(() => {
-        setMounted(true);
-    }, []);
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -50,10 +43,6 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [lastScrollY]);
 
-    const logoSrc = mounted && theme === "dark"
-        ? "/assets/logo/seven_oak_prestige_dark_mode.png"
-        : "/assets/logo/seven_oak_prestige_light_mode.png";
-
     return (
         <header
             className={cn(
@@ -70,19 +59,14 @@ export default function Navbar() {
                     >
                         <div className="flex items-center">
                             <Image
-                                src={logoSrc}
+                                src="/assets/logo/seven_oak_prestige_logo.png"
                                 alt="Seven Oak Prestige Logo"
                                 width={70}
                                 height={70}
                                 priority
                             />
 
-                            <span className={cn(
-                                " text-sm font-bold md:inline-block md:text-base lg:text-lg",
-                                theme === "dark"
-                                    ? "bg-gradient-to-r from-[#d4af37] to-[#f3d066] bg-clip-text text-transparent"
-                                    : "bg-gradient-to-r from-[#030303] via-[#18140c] to-[#322402] bg-clip-text text-transparent"
-                            )}>
+                            <span className="bg-gradient-to-r from-[#d4af37] to-[#f3d066] bg-clip-text text-sm font-bold text-transparent md:inline-block md:text-base lg:text-lg">
                                 SEVEN OAK PRESTIGE
                             </span>
                         </div>

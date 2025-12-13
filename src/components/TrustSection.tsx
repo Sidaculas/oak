@@ -55,10 +55,7 @@ export default function TrustSection() {
                                         src={provider.logo}
                                         alt={`${provider.name} logo`}
                                         fill
-                                        className="object-contain brightness-0 invert dark:brightness-100 dark:invert-0"
-                                        style={{
-                                            filter: theme === "dark" ? "grayscale(100%)" : "grayscale(10%)"
-                                        }}
+                                        className="payment-logo object-contain"
                                     />
                                 </div>
                             </div>
