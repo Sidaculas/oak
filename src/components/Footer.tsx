@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
@@ -25,9 +26,9 @@ export default function Footer() {
 
                 {/* Page Links */}
                 <div className="footer-section footer-links">
-                    <a href="/terms" className="footer-link">Terms</a>
-                    <a href="/refund" className="footer-link">Refund</a>
-                    <a href="/privacy" className="footer-link">Privacy</a>
+                    <Link href="/terms" className="footer-link">Terms</Link>
+                    <Link href="/refund" className="footer-link">Refund</Link>
+                    <Link href="/privacy" className="footer-link">Privacy</Link>
                 </div>
 
                 {/* Vertical Separator */}
