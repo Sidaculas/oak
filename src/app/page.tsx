@@ -11,6 +11,7 @@ import Pricing from '../components/Pricing';
 import Testimonials from '../components/Testimonials';
 import SuccessStories from '../components/SuccessStories';
 import FAQ from '../components/FAQ';
+import CTASection from '../components/CTASection';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { CountryProvider } from '@/contexts/CountryContext';
@@ -28,6 +29,7 @@ export default function Home() {
             <Testimonials />
             <SuccessStories />
             <FAQ />
+            <CTASection />
             <Contact />
             <Footer />
         </CountryProvider>

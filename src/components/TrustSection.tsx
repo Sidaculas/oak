@@ -7,7 +7,7 @@ const paymentProviders = [
     { name: "Stripe", logo: "/assets/stripe.svg" },
     { name: "Wise", logo: "/assets/wise.svg" },
     { name: "Payoneer", logo: "/assets/payoneer.svg" },
-    { name: "Airwallex", logo: "/assets/airwallaex.svg" },
+    // { name: "Airwallex", logo: "/assets/airwallaex.svg" },
     { name: "Revolut", logo: "/assets/revolut.svg" },
 ];
 
@@ -34,7 +34,7 @@ export default function TrustSection() {
                 </div>
 
                 {/* Payment Provider Cards Grid */}
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 lg:gap-5">
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
                     {paymentProviders.map((provider, index) => (
                         <div
                             key={provider.name}
@@ -72,7 +72,7 @@ export default function TrustSection() {
                 {/* Bottom text */}
                 <div className="mt-10 text-center lg:mt-12">
                     <p className="trust-footer-text text-xs sm:text-sm">
-                        We support integration with all major payment gateways for your business needs
+                        We guide you through fintech onboarding. Provider approval depends on their compliance review process.
                     </p>
                 </div>
             </div>

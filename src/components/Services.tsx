@@ -1,7 +1,7 @@
 "use client";
 
 import CountrySelector, { Country } from "./CountrySelector";
-import { FaBuilding, FaMapMarkerAlt, FaUniversity, FaFileInvoiceDollar } from "react-icons/fa";
+import { FaBuilding, FaMapMarkerAlt, FaUniversity, FaFileInvoiceDollar, FaBriefcase, FaShieldAlt } from "react-icons/fa";
 import { useCountry } from "@/contexts/CountryContext";
 
 interface Service {
@@ -15,66 +15,76 @@ const servicesData: Record<Country, Service[]> = {
         {
             icon: <FaBuilding className="h-8 w-8" />,
             title: "UK Company Formation",
-            description: "Non-resident LTD formation in 24 hours, SIC optimisation, full compliance setup.",
+            description: "Non-resident LTD incorporation in 24 hours, including full compliance documents and a fintech-ready structure.",
         },
         {
             icon: <FaMapMarkerAlt className="h-8 w-8" />,
             title: "Premium UK Addresses",
-            description: "Registered office, director service address, mail scanning & privacy protection.",
+            description: "Registered office and director service address to protect privacy and keep personal details confidential.",
         },
         {
             icon: <FaUniversity className="h-8 w-8" />,
             title: "Fintech Account Setup",
-            description: "Approval guidance for Wise, Revolut, Airwallex, Payoneer & Stripe.",
+            description: "Guidance for approvals with Wise, Payoneer, Stripe, Revolut Business, and WorldFirst. (Final approval is always decided by the fintech provider.)",
         },
         {
             icon: <FaFileInvoiceDollar className="h-8 w-8" />,
-            title: "Compliance & Accounting",
-            description: "Annual filings, bookkeeping, VAT registration & ongoing advisory.",
+            title: "Mail Scanning & Digital Documents",
+            description: "Instant digital delivery of all official mail and company documents.",
         },
     ],
     USA: [
         {
             icon: <FaBuilding className="h-8 w-8" />,
-            title: "Delaware LLC Formation",
-            description: "Fast LLC formation in Delaware with registered agent service included.",
+            title: "USA LLC Formation",
+            description: "Delaware LLC formation for international entrepreneurs with no US presence required. Fast setup, compliant structure, and documents delivered digitally.",
+        },
+        {
+            icon: <FaShieldAlt className="h-8 w-8" />,
+            title: "Registered Agent Service",
+            description: "Annual US Registered Agent included for compliance and government correspondence.",
         },
         {
             icon: <FaMapMarkerAlt className="h-8 w-8" />,
-            title: "US Business Address",
-            description: "Professional Delaware business address with mail forwarding services.",
+            title: "US Mailing Address (Not a Virtual Office)",
+            description: "Compliance-grade address for official state notices and Registered Agent communication.",
         },
         {
             icon: <FaUniversity className="h-8 w-8" />,
-            title: "US Bank Account Setup",
-            description: "Assistance with opening US business bank accounts and payment processors.",
+            title: "Fintech Account Setup (Guidance Only)",
+            description: "Support for applying to US-friendly platforms such as Stripe Atlas, Payoneer, Mercury (LLC only), and PayPal Business.",
         },
         {
             icon: <FaFileInvoiceDollar className="h-8 w-8" />,
-            title: "Tax & Compliance",
-            description: "EIN registration, annual reports, and ongoing compliance support.",
+            title: "Operating Agreement & EIN",
+            description: "Full LLC documents including Operating Agreement. EIN (Employer Identification Number) application handled on your behalf.",
         },
     ],
     Canada: [
         {
             icon: <FaBuilding className="h-8 w-8" />,
-            title: "Federal Corporation",
-            description: "Canadian federal corporation registration with nationwide operations.",
+            title: "Canada Corporation Formation (Federal or Provincial)",
+            description: "Incorporation available for non-residents without a Canadian address.",
         },
         {
             icon: <FaMapMarkerAlt className="h-8 w-8" />,
-            title: "Canadian Address",
-            description: "Professional registered office address in major Canadian cities.",
-        },
-        {
-            icon: <FaUniversity className="h-8 w-8" />,
-            title: "Banking Solutions",
-            description: "Support for Canadian business bank accounts and payment systems.",
+            title: "Registered Address + Digital Mail",
+            description: "Compliance-ready address for government correspondence, with digital scanning and forwarding.",
         },
         {
             icon: <FaFileInvoiceDollar className="h-8 w-8" />,
-            title: "Compliance Services",
-            description: "Annual filings, GST/HST registration, and corporate maintenance.",
+            title: "Corporate Documents",
+            description: "Articles of incorporation, share structure, minute book, and organizational resolutions included.",
+        },
+        {
+            icon: <FaBriefcase className="h-8 w-8" />,
+            title: "Virtual Office (Optional)",
+            description: "Professional business presence without physical office requirements.",
+        },
+        {
+            icon: <FaUniversity className="h-8 w-8" />,
+            title: "Fintech Support",
+            description: "Guidance for applying to platforms compatible with Canadian corporations such as Payoneer and Stripe.",
         },
     ],
 };

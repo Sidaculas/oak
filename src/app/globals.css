@@ -116,6 +116,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    /* font-family: 'Playfair Display', Georgia, serif; */
 }
 
 
@@ -1422,12 +1423,12 @@ CONTACT SECTION
 
 /* Part 1: Contact Information Section */
 .contact-info-section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     position: relative;
     overflow: hidden;
 }
 
-/* Background decoration - matching FAQ */
+/* Background decoration */
 .contact-info-section::before {
     content: '';
     position: absolute;
@@ -1447,14 +1448,10 @@ CONTACT SECTION
     width: 384px;
     height: 384px;
     border-radius: 50%;
-    background: rgba(212, 175, 55, 0.05);
+    background: rgba(212, 175, 55, 0.03);
     filter: blur(80px);
     z-index: 0;
     pointer-events: none;
-}
-
-.dark .contact-info-section::after {
-    background: rgba(212, 175, 55, 0.05);
 }
 
 /* Second decorative circle at bottom right */
@@ -1466,50 +1463,51 @@ CONTACT SECTION
     width: 384px;
     height: 384px;
     border-radius: 50%;
-    background: rgba(212, 175, 55, 0.05);
+    background: rgba(212, 175, 55, 0.03);
     filter: blur(80px);
     z-index: 0;
     pointer-events: none;
 }
 
-.dark .contact::before {
-    background: rgba(212, 175, 55, 0.05);
-}
-
 .contact-header {
     max-width: 800px;
-    margin: 0 auto 60px;
+    margin: 0 auto 80px;
     position: relative;
     z-index: 1;
 }
 
-.contact-header .section-title {
-    font-size: 42px;
+/* Main Title */
+.contact-main-title {
+    font-size: 64px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     color: hsl(0, 0%, 10%);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
-.dark .contact-header .section-title {
+.dark .contact-main-title {
     color: hsl(0, 0%, 98%);
 }
 
-.contact-header .section-subtitle {
+/* Main Subtitle */
+.contact-main-subtitle {
     font-size: 18px;
     color: hsl(0, 0%, 40%);
     line-height: 1.6;
+    font-weight: 400;
 }
 
-.dark .contact-header .section-subtitle {
+.dark .contact-main-subtitle {
     color: hsl(0, 0%, 70%);
 }
 
 /* Contact Cards Grid */
 .contact-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -1523,8 +1521,8 @@ CONTACT SECTION
             hsla(45, 25%, 95%, 0.9) 50%,
             hsla(45, 30%, 97%, 0.95) 100%);
     border: 2px solid hsl(45, 25%, 80%);
-    border-radius: 16px;
-    padding: 40px 30px;
+    border-radius: 0;
+    padding: 60px 40px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -1532,6 +1530,7 @@ CONTACT SECTION
         0 5px 20px -5px rgba(0, 0, 0, 0.08);
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
+    text-align: left;
 }
 
 .dark .contact-card {
@@ -1557,7 +1556,7 @@ CONTACT SECTION
 }
 
 .contact-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
     border-color: hsl(45, 70%, 55%);
     box-shadow: 0 20px 50px -10px rgba(212, 175, 55, 0.25),
         0 10px 30px -5px rgba(212, 175, 55, 0.15);
@@ -1569,13 +1568,13 @@ CONTACT SECTION
         0 10px 30px -5px rgba(0, 0, 0, 0.7);
 }
 
-/* Contact Icon */
+/* Contact Icon - Square with Rounded Corners */
 .contact-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 24px;
+    width: 80px;
+    height: 80px;
+    margin: 0 0 32px 0;
     background: linear-gradient(135deg, hsl(45, 70%, 50%), hsl(45, 80%, 60%));
-    border-radius: 50%;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1584,33 +1583,40 @@ CONTACT SECTION
     box-shadow: 0 8px 20px -5px rgba(212, 175, 55, 0.4);
 }
 
-.contact-card:hover .contact-icon {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 12px 30px -5px rgba(212, 175, 55, 0.6);
-}
-
-/* Contact Card Title */
-.contact-card h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 12px;
+.dark .contact-icon {
+    background: linear-gradient(135deg, hsl(45, 70%, 50%), hsl(45, 80%, 60%));
     color: hsl(0, 0%, 10%);
 }
 
-.dark .contact-card h3 {
+.contact-card:hover .contact-icon {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px -5px rgba(212, 175, 55, 0.6);
+}
+
+/* Contact Card Title - Uppercase */
+.contact-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: hsl(0, 0%, 10%);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.dark .contact-card-title {
     color: hsl(0, 0%, 98%);
 }
 
 /* Contact Link */
 .contact-link {
     display: block;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: hsl(45, 70%, 45%);
     text-decoration: none;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     transition: color 0.3s ease;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .contact-link:hover {
@@ -1627,10 +1633,11 @@ CONTACT SECTION
 
 /* Contact Description */
 .contact-description {
-    font-size: 14px;
+    font-size: 15px;
     color: hsl(0, 0%, 50%);
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 0;
+    font-weight: 300;
 }
 
 .dark .contact-description {
@@ -1745,6 +1752,81 @@ CONTACT SECTION
 }
 
 
+/* ================================
+CTA SECTION (After FAQ)
+================================= */
+
+/* Main Title */
+.cta-main-title {
+    font-weight: 800;
+    font-size: 64px;
+    color: hsl(0, 0%, 10%);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.dark .cta-main-title {
+    color: hsl(0, 0%, 98%);
+}
+
+/* Subtitle */
+.cta-subtitle {
+    color: hsl(0, 0%, 40%);
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dark .cta-subtitle {
+    color: hsl(0, 0%, 70%);
+}
+
+/* CTA Button */
+.cta-button {
+    background: transparent;
+    color: hsl(45, 70%, 50%);
+    border: 3px solid hsl(45, 70%, 50%);
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.dark .cta-button {
+    color: hsl(45, 70%, 60%);
+    border-color: hsl(45, 70%, 60%);
+}
+
+.cta-button:hover {
+    color: hsl(0, 0%, 100%);
+    background: hsl(45, 70%, 50%);
+    border-color: hsl(45, 70%, 50%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+}
+
+.dark .cta-button:hover {
+    color: hsl(0, 0%, 10%);
+    background: hsl(45, 70%, 60%);
+    border-color: hsl(45, 70%, 60%);
+}
+
+/* Button hover background */
+.cta-button-bg {
+    background: hsl(45, 70%, 50%);
+    transform-origin: left;
+}
+
+.dark .cta-button-bg {
+    background: hsl(45, 70%, 60%);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
 
 /* ================================
 FOOTER
@@ -1809,6 +1891,29 @@ FOOTER
 }
 
 .dark .footer-company-address {
+    color: hsl(0, 0%, 70%);
+}
+
+.footer-disclaimer {
+    margin: 0;
+    font-size: 10px;
+    color: hsl(0, 0%, 50%);
+}
+
+.dark .footer-disclaimer {
+    color: hsl(0, 0%, 60%);
+}
+
+.footer-badges {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: hsl(0, 0%, 40%);
+    flex-wrap: wrap;
+}
+
+.dark .footer-badges {
     color: hsl(0, 0%, 70%);
 }
 
@@ -2101,8 +2206,9 @@ RESPONSIVE DESIGN
     .services h2,
     .checker h2,
     .pricing h2,
-    .contact-header .section-title {
-        font-size: 32px;
+    .contact-main-title {
+        font-size: 40px;
+        letter-spacing: 2px;
     }
 
     .contact-cards {
@@ -2153,12 +2259,28 @@ RESPONSIVE DESIGN
         font-size: 14px;
     }
 
-    .contact-header .section-subtitle {
+    .contact-main-subtitle {
         font-size: 16px;
     }
 
     .contact-card {
-        padding: 30px 20px;
+        padding: 40px 24px;
+    }
+
+    /* CTA Section Responsive */
+    .cta-main-title {
+        font-size: 36px;
+        letter-spacing: 0.03em;
+    }
+
+    .cta-subtitle {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        font-size: 14px;
+        padding: 14px 24px;
+        letter-spacing: 0.1em;
     }
 
     .cta-title {

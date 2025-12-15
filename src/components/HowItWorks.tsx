@@ -1,7 +1,7 @@
 "use client";
 
 import CountrySelector, { Country } from "./CountrySelector";
-import { FaEdit, FaShieldAlt, FaRocket } from "react-icons/fa";
+import { FaEdit, FaShieldAlt, FaRocket, FaCheck } from "react-icons/fa";
 import { useCountry } from "@/contexts/CountryContext";
 
 interface Step {
@@ -15,21 +15,26 @@ const howItWorksData: Record<Country, { steps: Step[]; footer: string }> = {
         steps: [
             {
                 icon: <FaEdit className="h-10 w-10" />,
-                title: "Submit Your Application",
-                description: "Choose your package and provide basic details. We handle all filings, documents and SIC optimization for you.",
+                title: "SUBMIT YOUR APPLICATION",
+                description: "Choose your plan and complete the secure onboarding form. We handle all filings, documents, and SIC optimization for you.",
             },
             {
                 icon: <FaShieldAlt className="h-10 w-10" />,
-                title: "Fintech Compliance Check",
-                description: "We prepare your company structure so your fintech accounts (Wise, Revolut, Airwallex, Payoneer, Stripe) approve smoothly.",
+                title: "WE REGISTER YOUR COMPANY",
+                description: "We submit your incorporation to Companies House (within 24 hours*). Your company is formed with the correct structure and legal details.",
             },
             {
                 icon: <FaRocket className="h-10 w-10" />,
-                title: "Launch in 24 Hours",
-                description: "Your UK LTD, registered office and documents are ready. Start operating globally with full privacy and compliance.",
+                title: "RECEIVE YOUR DOCUMENTS",
+                description: "Your official incorporation documents are delivered by email as soon as Companies House approves the registration.",
+            },
+            {
+                icon: <FaCheck className="h-10 w-10" />,
+                title: "OPTIONAL FINTECH SUPPORT",
+                description: "Prestige & Elite clients receive guidance for fintech applications (Wise, Revolut, Payoneer, Stripe).",
             },
         ],
-        footer: "Your UK company, professionally built — even while you sleep.",
+        footer: "* Subject to Companies House processing times.",
     },
     USA: {
         steps: [
@@ -47,6 +52,11 @@ const howItWorksData: Record<Country, { steps: Step[]; footer: string }> = {
                 icon: <FaRocket className="h-10 w-10" />,
                 title: "Launch Your LLC",
                 description: "Your Delaware LLC is formed with registered agent service. Start operating your US business.",
+            },
+            {
+                icon: <FaCheck className="h-10 w-10" />,
+                title: "OPTIONAL FINTECH SUPPORT",
+                description: "Prestige & Elite clients receive guidance for fintech applications (Wise, Revolut, Payoneer, Stripe).",
             },
         ],
         footer: "Your US LLC, ready to operate — hassle-free formation.",
@@ -67,6 +77,11 @@ const howItWorksData: Record<Country, { steps: Step[]; footer: string }> = {
                 icon: <FaRocket className="h-10 w-10" />,
                 title: "Launch Your Corporation",
                 description: "Your Canadian corporation is ready with registered office and all necessary documents.",
+            },
+            {
+                icon: <FaCheck className="h-10 w-10" />,
+                title: "OPTIONAL FINTECH SUPPORT",
+                description: "Prestige & Elite clients receive guidance for fintech applications (Wise, Revolut, Payoneer, Stripe).",
             },
         ],
         footer: "Your Canadian corporation, professionally established.",

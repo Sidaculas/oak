@@ -1,7 +1,7 @@
 "use client";
 
 import CountrySelector, { Country } from "./CountrySelector";
-import { FaShieldAlt, FaClock, FaDollarSign, FaHeadset, FaUserTie, FaCheckCircle } from "react-icons/fa";
+import { FaShieldAlt, FaClock, FaDollarSign, FaHeadset, FaUserTie, FaCheckCircle, FaBuilding } from "react-icons/fa";
 import { useCountry } from "@/contexts/CountryContext";
 
 interface Reason {
@@ -68,24 +68,24 @@ const whyChooseData: Record<Country, { subtitle: string; icon: React.ReactNode; 
         icon: <span className="text-5xl">🇨🇦</span>,
         reasons: [
             {
-                icon: <FaShieldAlt className="h-8 w-8" />,
-                title: "Compliance",
-                description: "Guarantee federal and provincial compliance.",
-            },
-            {
-                icon: <FaClock className="h-8 w-8" />,
-                title: "Fast Processing",
-                description: "Quick and efficient LLC formation in Canada.",
-            },
-            {
-                icon: <FaHeadset className="h-8 w-8" />,
-                title: "Premium Support",
-                description: "Expert assistance throughout the process.",
-            },
-            {
                 icon: <FaUserTie className="h-8 w-8" />,
-                title: "Trusted by Entrepreneurs",
-                description: "Supporting businesses across various industries.",
+                title: "Non-Resident Friendly",
+                description: "We help founders incorporate even without a Canadian residence.",
+            },
+            {
+                icon: <FaBuilding className="h-8 w-8" />, // Import FaBuilding if not present, wait, it's not in current file imports. I need to check imports.
+                title: "Flexible Structure",
+                description: "Choose between Federal or Provincial incorporation depending on your needs.",
+            },
+            {
+                icon: <FaShieldAlt className="h-8 w-8" />,
+                title: "Privacy & Compliance",
+                description: "Registered address keeps your personal information protected.",
+            },
+            {
+                icon: <FaCheckCircle className="h-8 w-8" />,
+                title: "Fintech-Optimised Documents",
+                description: "Company structured to meet financial institution standards.",
             },
         ],
     },
