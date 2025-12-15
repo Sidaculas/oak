@@ -370,7 +370,7 @@ TRUST SECTION (Payment Gateways)
 }
 
 .dark .trust-card-bg:hover {
-    border-color: hsl(45, 70%, 50%);
+    border-color: hsl(45, 70%, 65%);
     box-shadow: 0 20px 40px -5px rgba(212, 175, 55, 0.2),
         0 10px 20px -5px rgba(0, 0, 0, 0.5);
 }
@@ -381,7 +381,7 @@ TRUST SECTION (Payment Gateways)
 }
 
 .dark .trust-heading {
-    color: hsl(0, 0%, 98%);
+    color: hsl(45, 70%, 65%);
 }
 
 .trust-subheading {
@@ -389,7 +389,7 @@ TRUST SECTION (Payment Gateways)
 }
 
 .dark .trust-subheading {
-    color: hsl(0, 0%, 70%);
+    color: hsl(45, 50%, 60%);
 }
 
 .trust-footer-text {
@@ -397,7 +397,7 @@ TRUST SECTION (Payment Gateways)
 }
 
 .dark .trust-footer-text {
-    color: hsl(0, 0%, 60%);
+    color: hsl(45, 40%, 55%);
 }
 
 /* Trust Card Animation */
@@ -440,11 +440,11 @@ TRUST SECTION (Payment Gateways)
 /* Payment Gateway Logos - Theme Aware */
 .payment-logo {
     filter: brightness(0) invert(1) grayscale(10%);
-    transition: filter 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .dark .payment-logo {
-    filter: brightness(1) invert(0) grayscale(100%);
+    filter: brightness(0) saturate(100%) invert(78%) sepia(42%) saturate(680%) hue-rotate(358deg) brightness(96%) contrast(88%);
 }
 
 
@@ -1487,7 +1487,7 @@ CONTACT SECTION
 }
 
 .dark .contact-main-title {
-    color: hsl(0, 0%, 98%);
+    color: hsl(45, 70%, 65%);
 }
 
 /* Main Subtitle */
@@ -1499,7 +1499,7 @@ CONTACT SECTION
 }
 
 .dark .contact-main-subtitle {
-    color: hsl(0, 0%, 70%);
+    color: hsl(45, 50%, 60%);
 }
 
 /* Contact Cards Grid */
@@ -1642,6 +1642,219 @@ CONTACT SECTION
 
 .dark .contact-description {
     color: hsl(0, 0%, 65%);
+}
+
+/* ================================
+NEW CONTACT CARD DESIGN
+================================= */
+
+/* Contact Cards Wrapper */
+.contact-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Individual Contact Card - New Design */
+.contact-card-new {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.contact-card-new:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.contact-card-new:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Icon Wrapper */
+.contact-icon-wrapper {
+    flex-shrink: 0;
+}
+
+/* Golden Icon Box */
+.contact-icon-box {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, hsl(45, 70%, 50%), hsl(45, 80%, 60%));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(0, 0%, 10%);
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 16px -4px rgba(212, 175, 55, 0.4);
+}
+
+.dark .contact-icon-box {
+    background: linear-gradient(135deg, hsl(45, 70%, 50%), hsl(45, 80%, 60%));
+    color: hsl(0, 0%, 10%);
+}
+
+.contact-card-new:hover .contact-icon-box {
+    transform: scale(1.05);
+    box-shadow: 0 10px 24px -4px rgba(212, 175, 55, 0.6);
+}
+
+/* Card Content */
+.contact-card-content {
+    flex: 1;
+    text-align: left;
+}
+
+/* Card Heading */
+.contact-card-heading {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: hsl(45, 70%, 50%);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.dark .contact-card-heading {
+    color: hsl(45, 70%, 60%);
+}
+
+/* Card Link */
+.contact-card-link {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: hsl(0, 0%, 10%);
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.contact-card-link:hover {
+    color: hsl(45, 70%, 50%);
+}
+
+.dark .contact-card-link {
+    color: hsl(45, 70%, 65%);
+}
+
+.dark .contact-card-link:hover {
+    color: hsl(45, 80%, 70%);
+}
+
+/* Card Description */
+.contact-card-desc {
+    font-size: 13px;
+    color: hsl(0, 0%, 50%);
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 300;
+}
+
+.dark .contact-card-desc {
+    color: hsl(45, 40%, 55%);
+}
+
+/* Responsive Design for Tablets and Desktops */
+@media (min-width: 768px) {
+    .contact-cards-wrapper {
+        max-width: 900px;
+        gap: 32px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-card-new {
+        gap: 20px;
+        padding: 32px;
+        background: linear-gradient(135deg,
+                hsla(45, 30%, 97%, 0.95) 0%,
+                hsla(45, 25%, 95%, 0.9) 100%);
+        border: 2px solid hsl(45, 25%, 80%);
+        border-radius: 16px;
+        box-shadow: 0 8px 24px -8px rgba(212, 175, 55, 0.15),
+            0 4px 16px -4px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .dark .contact-card-new {
+        background: linear-gradient(135deg,
+                hsla(0, 0%, 15%, 0.95) 0%,
+                hsla(45, 10%, 12%, 0.9) 100%);
+        border-color: hsl(45, 15%, 25%);
+        box-shadow: 0 8px 24px -8px rgba(212, 175, 55, 0.2),
+            0 4px 16px -4px rgba(0, 0, 0, 0.6);
+    }
+
+    .contact-card-new:hover {
+        transform: translateY(-4px);
+        border-color: hsl(45, 70%, 55%);
+        box-shadow: 0 16px 40px -8px rgba(212, 175, 55, 0.25),
+            0 8px 24px -4px rgba(212, 175, 55, 0.15);
+    }
+
+    .dark .contact-card-new:hover {
+        border-color: hsl(45, 70%, 55%);
+        box-shadow: 0 16px 40px -8px rgba(212, 175, 55, 0.3),
+            0 8px 24px -4px rgba(0, 0, 0, 0.7);
+    }
+
+    .contact-icon-box {
+        width: 72px;
+        height: 72px;
+    }
+
+    .contact-card-heading {
+        font-size: 16px;
+    }
+
+    .contact-card-link {
+        font-size: 18px;
+    }
+
+    .contact-card-desc {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-cards-wrapper {
+        max-width: 1000px;
+    }
+
+    .contact-card-new {
+        padding: 40px;
+    }
+
+    .contact-icon-box {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact-card-heading {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .contact-card-link {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .contact-card-desc {
+        font-size: 15px;
+        line-height: 1.6;
+    }
 }
 
 /* Part 2: CTA Section */
