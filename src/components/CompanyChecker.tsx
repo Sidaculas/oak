@@ -439,7 +439,7 @@ export default function CompanyChecker() {
                             }`}>
                             <input
                                 type="text"
-                                className="flex-1 bg-transparent px-4 py-3 text-base text-foreground outline-none placeholder:text-muted-foreground"
+                                className="flex-1 min-w-0 bg-transparent px-4 py-3 text-base text-foreground outline-none placeholder:text-muted-foreground"
                                 placeholder="Enter company name"
                                 value={companyName}
                                 onChange={(e) => {
@@ -450,14 +450,14 @@ export default function CompanyChecker() {
                                 disabled={isLoading}
                             />
                             {/* Vertical Divider */}
-                            <div className="h-6 w-[1px] dark:bg-white/40 bg-black/40"></div>
+                            <div className="h-6 w-[1px] dark:bg-white/40 bg-black/40 flex-shrink-0"></div>
 
                             {/* Suffix Select Custom Wrapper */}
-                            <div className="relative">
+                            <div className="relative flex-shrink-0 w-[85px] max-w-[85px]">
                                 <select
                                     value={suffix}
                                     onChange={(e) => setSuffix(e.target.value)}
-                                    className="appearance-none bg-transparent pl-4 pr-7 py-3 text-sm font-medium text-foreground outline-none cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors rounded-r-lg"
+                                    className="appearance-none bg-transparent pl-2 pr-6 py-3 text-sm font-medium text-foreground outline-none cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition-colors rounded-r-lg w-full"
                                     disabled={isLoading}
                                 >
                                     <option value="LTD" className="text-foreground bg-background">LTD</option>
@@ -465,7 +465,7 @@ export default function CompanyChecker() {
                                     <option value="PLC" className="text-foreground bg-background">PLC</option>
                                 </select>
                                 {/* Custom Chevron */}
-                                <div className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground">
+                                <div className="pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2 text-muted-foreground">
                                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                     </svg>
