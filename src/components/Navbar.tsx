@@ -99,7 +99,7 @@ export default function Navbar() {
                             {links.map((link) => (
                                 <li key={link.href}>
                                     <Link
-                                        href={link.href}
+                                        href={link.href.startsWith("#") && pathname !== "/" ? "/" + link.href : link.href}
                                         className="group relative block px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
                                     >
                                         <span className="relative z-10">{link.name}</span>
@@ -110,7 +110,7 @@ export default function Navbar() {
                             <li>
                                 <Link
                                     href="https://wa.me/447447488755"
-                                    className="ml-2 flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#d4af37] to-[#f3d066] px-4 py-2 text-sm font-bold text-black shadow-lg shadow-[#d4af37]/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#d4af37]/30 active:scale-95"
+                                    className="ml-2 flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#d4af37] to-[#f3d066] px-4 py-2 text-sm font-bold text-black shadow-lg shadow-[#d4af37]/40 transition-all hover:scale-105 hover:shadow-xl hover:shadow-[#d4af37]/60 active:scale-95"
                                 >
                                     <FaWhatsapp className="h-4 w-4" />
                                     <span>WhatsApp</span>
@@ -126,7 +126,7 @@ export default function Navbar() {
                     <div className="flex items-center gap-4 lg:hidden">
                         <Link
                             href="https://wa.me/447447488755"
-                            className="flex items-center justify-center rounded-lg bg-gradient-to-r from-[#d4af37] to-[#f3d066] p-2 text-black shadow-md shadow-[#d4af37]/20 transition-all hover:scale-105 active:scale-95"
+                            className="flex items-center justify-center rounded-lg bg-gradient-to-r from-[#d4af37] to-[#f3d066] p-2 text-black shadow-md shadow-[#d4af37]/40 transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#d4af37]/60 active:scale-95"
                             aria-label="WhatsApp"
                         >
                             <FaWhatsapp className="h-4 w-4" />
@@ -150,19 +150,19 @@ export default function Navbar() {
                                     {links.map((link) => (
                                         <Link
                                             key={link.href}
-                                            href={link.href}
+                                            href={link.href.startsWith("#") && pathname !== "/" ? "/" + link.href : link.href}
                                             className="group relative overflow-hidden rounded-lg px-4 py-3 text-base font-medium text-foreground/80 transition-colors hover:bg-foreground/5 hover:text-foreground"
                                             onClick={(e) => {
                                                 // Close the sheet
                                                 setIsOpen(false);
 
-                                                // Handle anchor links
-                                                if (link.href.startsWith('#')) {
+                                                // Handle anchor links only when on the home page
+                                                if (link.href.startsWith("#") && pathname === "/") {
                                                     e.preventDefault();
-                                                    const element = document.querySelector(link.href);
+                                                    const element = document.querySelector(`${link.href}`);
                                                     if (element) {
                                                         setTimeout(() => {
-                                                            element.scrollIntoView({ behavior: 'smooth' });
+                                                            element.scrollIntoView({ behavior: "smooth" });
                                                         }, 100);
                                                     }
                                                 }
