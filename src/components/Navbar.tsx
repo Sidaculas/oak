@@ -144,7 +144,21 @@ export default function Navbar() {
                                             key={link.href}
                                             href={link.href}
                                             className="group relative overflow-hidden rounded-lg px-4 py-3 text-base font-medium text-foreground/80 transition-colors hover:bg-foreground/5 hover:text-foreground"
-                                            onClick={() => setIsOpen(false)}
+                                            onClick={(e) => {
+                                                // Close the sheet
+                                                setIsOpen(false);
+
+                                                // Handle anchor links
+                                                if (link.href.startsWith('#')) {
+                                                    e.preventDefault();
+                                                    const element = document.querySelector(link.href);
+                                                    if (element) {
+                                                        setTimeout(() => {
+                                                            element.scrollIntoView({ behavior: 'smooth' });
+                                                        }, 100);
+                                                    }
+                                                }
+                                            }}
                                         >
                                             <span className="relative z-10">{link.name}</span>
                                             <span className="absolute inset-y-0 left-0 w-1 origin-left scale-y-0 bg-gradient-to-b from-[#d4af37] to-[#f3d066] transition-transform group-hover:scale-y-100" />
